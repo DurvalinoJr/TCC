@@ -1,0 +1,492 @@
+% Nome do capítulo
+\chapter{Fundamentação Teórica}
+% Label para referenciar
+\label{cap2}
+
+% Diminuir espaçamento entre título e texto
+\vspace{-1.9cm}
+
+% Texto do capítulo
+Neste capítulo, serão abordados os conceitos importantes e necessários para o entendimento do propósito do trabalho, tais como sistema de gerenciamento de bando de dados SGBD, tipos de banco de dados e as diferênças entre eles.
+
+
+\section{Banco de dados}
+Um banco de dados basicamente é um sistema de armazenamento de dados baseado em computador; isto é, um sistema cujo objetivo global é registrar e manter informações. Estas informações pode ser qualquer uma considerada significativa para à empresa ou organização \cite{datebd}. Uma coleção de informações que se relacionam de modo que criem algum sentido, ou seja, é uma estrutura bem organizada de dados que permite a extração de informações. 
+
+Banco de dados são amplamente utilizados, como exemplo de aplicações podemos citar: 
+
+\begin{itemize}
+    \item Informações de empresas
+        \begin{itemize}
+            \item Vendas: Informações sobre clientes, produtos e pedidos compras
+            \item Contabilidade: Pagamentos, recebimentos, saldos de conta, ativos e outras informações contábeis.
+            \item Recursos humanos: Informações sobre funcionários, salários e impostos sobre folha de pagamento.
+            \item Fabricas: Gerenciamento da cadeia de suprimentos e para rastrear a produção de itens nas fábricas, estoques de itens em armazéns e lojas e pedidos de itens.
+        \end{itemize}
+    
+    \item Bancos e sistemas financeiros
+        \begin{itemize}
+            \item Bancos: Informações sobre clientes, contas, empréstimos e transações bancárias.
+            \item Transações com cartão de crédito: Informações de compras em cartões de crédito e geração de extratos mensais.
+        \end{itemize}
+    
+    \item Universidades: Para informações sobre os alunos, registros de cursos e notas (além de informações corporativas padrão, como recursos humanos e contabilidade).
+    
+    \item Companhias aéreas: Informações sobre reservas e informações de agendamento. As companhias aéreas estavam entre as primeiras a usar bancos de dados de maneira geograficamente distribuída.   
+    
+    \item Telecomunicação: Para manter registros de chamadas feitas, gerar contas mensais, manter saldos em contas pré-pagas e armazenar informações sobre as redes de comunicação.
+
+\end{itemize}
+
+- A referencia do livre Data base System Concepts 7 edição está nesse link
+%https://www.campusbookrentals.com/textbook/database-system-concepts-7th-edition-silberschatz/9789332901384
+- Contextualizar e finalizar seção
+
+%Podemos exemplificar situações clássicas como uma lista telefônica, um catálogo de livros de uma biblioteca ou um sistema de controle de RH de uma empresa.
+
+\section{Sistema de Gerência de Banco de Dados }
+
+Segundo \citeonline{carlos} um Sistema de Gerência de Banco de Dados (\ac{SGBD}) é um software que incorpora as funções de definição, recuperação e alteração de dados em um banco de dados. Seu principal objetivo é retirar da aplicação cliente a responsabilidade de gerenciar o acesso, a manipulação e a organização dos dados. O SGBD disponibiliza uma interface para que seus clientes possam incluir, alterar ou consultar dados previamente armazenados. 
+
+Portanto, \ac{SGBD} é um software projetado para auxiliar a manutenção e utilização de vastos conjuntos de dados. \cite{ramakrishnan2008sistemas} O uso de um SGBD possui, entre outras, as seguintes vantagens: 
+
+\begin{compactitem}
+    \item \textbf{Independência de dados:} As aplicações não devem, idealmente, ser expostos aos detalhes de representação e armazenamento de dados. O SGBD provê uma visão abstrata dos dados que oculta tais detalhes. 
+    
+    \item \textbf{Acesso eficiente aos dados:} Um SGBD utiliza uma variedade de técnicas sofisticadas para armazenar e recuperar dados eficientemente. Este recurso é especialmente importante se os dados são armazenados em dispositivos de armazenamento externos. 
+    
+    \item \textbf{Integridade e segurança dos dados:} Se os dados são sempre acessados através do SGBD, ele pode forçar restrições de integridade. Por exemplo, antes de inserir informações sobre o salário de um funcionário, o SGBD pode verificar se o orçamento do departamento não está se excedendo. Além disso, ele pode formar controles de acesso que governam quais dados estão visíveis a diferentes classes de usuários. 
+    
+    \item \textbf{Administração de dados:} Quando diversos usuários compartilham dados, centralizar a administração dos dados pode oferecer melhorias significativas. Profissionais experientes que compreendem a natureza dos dados sendo gerenciados, e como os diferentes grupos de usuários os utilizam, podem ser responsáveis por organizar a representação dos dados para minimizar a redundância e para realizar as sintonizações finais do armazenamento dos dados para garantir uma eficiente recuperação. 
+    
+    \item \textbf{Acesso concorrente e recuperação de falha:} Um SGBD planeja o acesso concorrente aos dados de maneira tal que os usuários podem achar que os dados estão sendo acessados por apenas um único usuário de cada vez. Além disso, o SGBD protege os usuários dos efeitos de falhas de sistema. 
+    
+    \item \textbf{Tempo reduzido de desenvolvimento de aplicações:} Obviamente, o SGBD suporta funções importantes que são comuns a vários aplicativos que acessam os dados no SGBD. Isso, em conjunto com uma interface de alto nível, facilita o desenvolvimento rápido de aplicativos. Os aplicativos de SGBD tendem a ser mais robustos do que os palicativos similires independentes porque muitas tarefas importantes são tratadas pelo SGBD e não precisam ser depuradas e testadas no aplicativo. 
+\end{compactitem}
+
+\section{Banco de dados relacional}
+
+De acordo com \citeonline{navathesistemas} O modelo de dados relacional foi introduzido inicialmente por Edgar Frank Codd, da IBM Research, em 1970, em um artigo \cite{codd}, que atraiu atenção imediata devido a sua simplicidade e base matemática.
+
+O Modelo Relacional é um modelo matemático derivado da Teoria dos Conjuntos que propõe que as estruturas de dados devem ser encaradas como conjuntos. Segundo essa teoria, entendemos por conjunto o agrupamento de elementos que possuem características semelhantes, coleção de objetos. 
+
+O modelo relacional representa o banco de dados como uma coleção de relações. Informalmente, cada relação é semelhante a uma tabela de valores. Em uma tabela de valores cada linha na tabela representa uma coleção de valores de dados relacionados. Uma linha representa um fato que normalmente corresponde a uma entidade ou relacionamento no mundo real. Os nomes da tabela e da coluna são usados para ajudar a interpretar o significado dos valores em cada linha. 
+
+Na Figura \ref{fig:1}. a tabela é chamada de ALUNO porque cada linha representa fatos sobre uma entidade particular de aluno. Os nomes de coluna (Cpf, Endereco, Media, etc.) especificam como interpretar os valores de dados em cada linha, com base na coluna em que cada valor se encontra. Todos os valores em uma coluna são do mesmo tipo de dados. Na terminologia formal do modelo relacional, uma linha é chamada de tupla, um cabeçalho da coluna é chamado de atributo e a tabela é chamada de relação.
+
+\begin{figure}[H]
+  % Alterar espaçamentos antes e depois do caption
+  \setlength{\abovecaptionskip}{0pt}
+  \setlength{\belowcaptionskip}{0pt}
+  % Caption
+  \caption[Atributos e tuplas de uma relação ALUNO]{Atributos e tuplas de uma relação ALUNO}
+  \centering
+  \includegraphics[width=.95\textwidth]{imagem/RelationalTable.png}
+  % Caption centralizada
+  \captionsetup{justification=centering}
+  \captionfont{\small{\textbf{\\Fonte: \cite{navathesistemas} }}}	
+  \label{fig:1}
+\end{figure}
+
+
+
+
+
+%Um banco de dados relacional é uma coleção de dados com relacionamentos predefinidos entre si. Esses itens são organizados como um conjunto de tabelas com colunas e linhas. As tabelas são usadas para reter informações sobre os objetos a serem representados no banco de dados. Cada coluna da tabela retém um determinado tipo de dado e um campo armazena o valor em si de um atributo. As linhas na tabela representam uma coleção de valores relacionados de um objeto ou uma entidade. Cada linha em uma tabela pode ser marcada com um único identificador chamado de chave principal. Já as linhas entre as várias tabelas podem ser associadas usando chaves estrangeiras. 
+
+
+
+%Os bancos de dados relacionais são fundamentados no paradigma da orientação a conjuntos, uma vez que sua base é contruída em cima da teoria de conjuntos. Esses bancos de dados armazenam dados em estruturas chamadas tabelas, compostas por colunas e linhas. Sua linguágem é a \ac{SQL}. \cite{impacta}
+
+%O modelo de banco de dados relacional é o mais utilizado atualmente no mercado e um dos principais motivos para isso é a preocupação com a consistência dos dados, no qual é garantida pelo princípio conhecido como ACID, Atomicidade, Consistência, Isolamento e Durabilidade. Esse princípio pode ser definido como:
+
+%\begin{compactitem}
+%	\item \textbf{Atomicidade}: Trata a transação como parte indivisível, A transação deve ter todos os registros alterados em caso de sucesso ou, em caso de falha, nenhum registro deve ser alterado, garantindo que nenhuma alteração fique incompleta. 
+    
+%    \item \textbf{Consistência}: A execução de uma transação deve levar ao banco de dados de um estado consistente a outro também consistente. Uma transação é consistente se não violar a integridade do banco de dados. Se a transação tiver êxito ou falhar, ela deve deixar o banco de dados em um estado consistente.Se uma transação falhar, ela precisa desfazer todas as alterações temporárias e deixar o banco de dados no estado em que ele estava antes que a transação iniciou.
+    
+%    \item \textbf{Isolamento}: Uma transação em andamento mas ainda não validada deve permanecer isolada de qualquer outra operação, ou seja, garantimos que a transação não será interferida por nenhuma outra transação concorrente
+    
+%    \item \textbf{Durabilidade} Os efeitos de uma transação em caso de sucesso devem persistir no banco de dados mesmo em casos de quedas de energia, travamentos ou erros. Garantindo que os dados estarão disponíveis em definitivo.     
+%\end{compactitem}
+
+\section{Banco de Dados não relacional}
+Um banco de dados não relacional é um banco de dados que não utiliza o esquema de tabela de linhas e colunas encontrado no modelo relacional. Em vez disso, os bancos de dados não relacionais usam um modelo de armazenamento otimizado para os requisitos específicos do tipo de dados que está sendo armazenado.
+
+Os bancos de dados não relacionais também são conhecidos como \ac{NoSQL}. O Termo NoSQL, foi utilizado pela primeira no final dos anos 90, por Carlo Strozzi, como nome de seu SGBD, baseado no Modelo Relacional, sem interface SQL. Sendo uma solução alternativa para os bancos de dados relacionais. Os banco de dados \ac{NoSQL} possuem uma alta escalabilidade, disponibilidade,  desempenho e menor tempo de resposta a consultas. \cite{nosqlpramod}
+
+
+Os bancos de dados não relacionais foram construídos baseados nas seguintes classificações: 
+\begin{compactitem}
+	\item \textbf{Bancos de dados orientados à documentos}: No modelo orientado a documentos tem-se um esquema que representa o documento e em cada documento tem-se um conjunto de campos chave que o identifica. Esse documento não depende de um esquema rígido, ou seja, não exige uma estrutura fixa como ocorre nos bancos relacionais. Assim, é possível que ocorra uma atualização na estrutura do documento, com a adição de novos campos, por exemplo, sem causar problemas ao banco de dados. Na Figura \ref{fig:2} o documento é representado por uma estrutura JSON (JavaScript Object Notation).  
+	
+\begin{figure}[H]
+  % Alterar espaçamentos antes e depois do caption
+  \setlength{\abovecaptionskip}{0pt}
+  \setlength{\belowcaptionskip}{0pt}
+  % Caption
+  \caption[Banco de dados de Documentos]{Armazenamento de dados de Documentos}
+  \centering
+  \includegraphics[width=.65\textwidth]{imagem/NoSQL_Document.png}
+  % Caption centralizada
+  \captionsetup{justification=centering}
+  \captionfont{\small{\textbf{\\Fonte: \cite{microsoft} }}}	
+  \label{fig:2}
+\end{figure}
+    
+    \item \textbf{Bancos de dados orientados a colunas}: Esse modelo de banco de dados é parecido, conceitualmente com os bancos de dados relacionais, entretanto, ao invés de cada registro da tabela ficar armazenado em uma linha, o registro passa a ser armazenado em colunas separadas. Essa forma de armazenamento possui a vantagem de que cada coluna irá conter o mesmo tipo de dado, conforme demonstrado na Figura \ref{fig:3}. 
+    
+\begin{figure}[H]
+  % Alterar espaçamentos antes e depois do caption
+  \setlength{\abovecaptionskip}{0pt}
+  \setlength{\belowcaptionskip}{0pt}
+  % Caption
+  \caption[Banco de dados de colunas]{Armazenamentos de dados de colunas}
+  \centering
+  \includegraphics[width=.65\textwidth]{imagem/NoSQL_Column.png}
+  % Caption centralizada
+  \captionsetup{justification=centering}
+  \captionfont{\small{\textbf{\\Fonte: \cite{isaias} }}}	
+  \label{fig:3}
+\end{figure}
+    
+\item \textbf{Bancos de dados de esquema Chave/Valor}: Um banco de dados de chave-valor armazena dados como um conjunto de pares de chave-valor em que uma chave funciona como um identificador exclusivo.\cite{amazon} Portanto, esse tipo de banco de dados  armazena objetos indexados por chaves e possibilitam a busca por esses objetos a partir de suas chaves, conforme demonstrado na Figura \ref{fig:4}.
+
+\begin{figure}[H]
+  % Alterar espaçamentos antes e depois do caption
+  \setlength{\abovecaptionskip}{0pt}
+  \setlength{\belowcaptionskip}{0pt}
+  % Caption
+  \caption[Banco de dados de Chave/Valor]{Banco de dados de Chave/Valor}
+  \centering
+  \includegraphics[width=.65\textwidth]{imagem/NoSQL_Key_Value.png}
+  % Caption centralizada
+  \captionsetup{justification=centering}
+  \captionfont{\small{\textbf{\\Fonte: \cite{microsoft} }}}	
+  \label{fig:4}
+\end{figure}
+
+\item \textbf{Bancos de dados de Graficos}: Este modelo de banco de dados armazena dois tipos de informações: nós e bordas. Os nós representam entidades e as bordas especificam as relações entre essas entidades. Ambos os nós e as bordas podem ter propriedades que fornecem informações sobre esse nó ou borda, semelhante às colunas em uma tabela. As bordas também podem ter uma direção indicando a natureza do relacionamento. A Figura \ref{fig:5} mostra um exemplo desse modelo. 
+
+\begin{figure}[H]
+  % Alterar espaçamentos antes e depois do caption
+  \setlength{\abovecaptionskip}{0pt}
+  \setlength{\belowcaptionskip}{0pt}
+  % Caption
+  \caption[Banco de dados de gráficos]{Banco de dados de gráficos}
+  \centering
+  \includegraphics[width=.65\textwidth]{imagem/NoSQL_Graficos.png}
+  % Caption centralizada
+  \captionsetup{justification=centering}
+  \captionfont{\small{\textbf{\\Fonte: \cite{microsoft} }}}	
+  \label{fig:5}
+\end{figure}
+\end{compactitem}
+
+
+\section{Banco de dados In-Memory}
+Os banco de dados em memória principal armazenam os dados na memória física principal, diferentemente de um sistema de banco de dados convencional que armazena os dados no disco. Fornecendo uma maior velocidade de acesso aos dados. \cite{garcia}
+
+Recentemente, dois fatores tornaram os bancos de dados em memória principal interessantes: os preços de memória e o paralelismo multi-core. Nos últimos 30 anos, os preços de memória baixaram 10 vezes a cada 5 anos. 
+
+O paralelismo, juntamente com a capacidade de praticamente armazenar dados na memória, trouxe uma grande quantidade de  pesquisas e desenvolvimentos para os bancos de dados da memória principal. O resultado desse grande interesse sobre o assunto fez com que a maioria dos principais fornecedores de banco de dados desenvolvessem uma solução de banco de dados em memória, como SAP HANA, OracleTimesTen e Microsoft SQL Server Hekaton. Além disso, várias startups como o VoltDB e o MemSQL criaram um nicho no panorama do fornecedor de banco de dados.
+
+O resultado destas pesquisas e desenvolvimentos é uma nova geração de sistemas de bancos de dados com um design bastante diferente quando comparado a um sistema relacional tradicional baseado em disco. Esses sistemas abandonam muitos dos princípios do design de livros didáticos em favor de abordagens novas, ou revisitadas, para alcançar alto desempenho em hardware moderno. \cite{Faerber}
+
+
+\section{Diferenças entre banco de dados relacional e banco de dados \textit{In-memory}}
+
+
+Nessa seção são avaliadas as diferenças de arquiteturas dos bancos de dados relacionais com os bancos de dados em memória principal, afim de compreender os pontos que permitem que os bancos de dados em memória principal alcancem um alto desempenho. 
+
+\subsection{Organização e layout de dados}
+
+Esta seção aborda os pontos básicos de organização e layout nos principais sistemas de banco de dados.
+
+\subsubsection{Organização de dados nos banco de dados relacionais}
+
+Quando os bancos de dados relacionais foram desenvolvidos a memória era um recuso escasso, com isso os banco de dados foram implementados sabendo que não seria possível armazenar todos os dados na memória principal. Portanto nos banco de dados relacionais os dados são armazenados no disco rígido. 
+
+O armazenamento de dados no disco rígido implica que os dados devem ser paginados na memória conforme apropriado durante o processamento. A paginação é uma técnica utilizada para o gerenciamento de memória pelo qual o computador armazena e recupera os dados do disco rígido para usa-los na memória principal. Os blocos de dados que transitam entra a memória principal e o disco são chamados de páginas por possuírem um tamanho fixo. \cite{tanenbaum}
+
+Os dados de paginação de/para o disco são manipulados pelo mecanismo de armazenamento do banco de dados. Além disso, as páginas são armazenadas em um conjunto de buffers compartilhados conforme a Figura 6.
+
+\begin{figure}[H]
+% Alterar espaçamentos antes e depois do caption
+  \setlength{\abovecaptionskip}{0pt}
+  \setlength{\belowcaptionskip}{0pt}
+% Caption
+  \caption[Conjunto de Buffer]{Conjunto de Buffer}
+  \centering
+  \includegraphics[width=.85\textwidth]{imagem/buffer_pool.jpg}
+% Caption centralizada
+  \captionsetup{justification=centering}
+  \captionfont{\small{\textbf{\\Fonte: \cite{Faerber}}}}	
+  \label{fig:ComponentesWiNoC}
+\end{figure}
+
+Quando o mecanismo de armazenamento recebe uma solicitação de página, ele primeiro realiza uma pesquisa na tabela de hash para determinar se a página reside no conjunto de buffers de dados. Se a página não estiver na memória, o mecanismo de armazenamento emitirá uma solicitação para trazer a página do disco para o conjunto de buffers de dados. Em seguida, ele retorna um ponteiro para o quadro da página na memória. Essa solução é solução interassante para o problema da paginação, no entanto, é facil perceber que o disco precisará ser acessado sempre que uma página não estiver no conjunto de buffers de dados afetando o desempenho dos principais sistemas de banco. 
+
+\subsubsection{Organização de dados em sistemas de memória principal}
+
+O principal local para registros em bancos de dados de memória principal é a RAM. Esses sistemas não são limitados pela necessidade de paginar dados de/para o disco sob demanda durante o processamento da consulta. É por essa razão que os bancos de dados modernos de memória principal evitam a estratégia baseada em página através de um conjunto de buffers de dados. Os banco de dados em memória principal não utilizam identificadores lógicos como id de página e offset, como é feito nos banco de dados trancidicionais. Em vez disso, os registros são acessados diretamente através da utilização de ponteiros. 
+
+\subsubsection{Benefícios de desempenho ao evitar a paginação}
+
+Evitar a estratégia do conjunto de buffer de dados para a paginação pode melhor o desempenho do banco de dados pelos seguintes motivos: 
+
+\begin{compactitem}
+    \item[(1)] Acessar os registros através do conjunto de buffer de dados leva uma sobrecarga desnecessária em um sistema  de memória principal, como pode ser visto na Figura 6, este tipo de estratégia requer duas camadas de processamento para resolver um ponteiro do registro físico, Acessando o conjunto de buffer de dados através da tabela Hash e caso seja necessário, calcular um ponteiro para o registro no disco rígido. 
+    
+    \item[(2)] Trava da página, o recurso que estiver acessando determinada página deverá definir uma trava de página compartilhada em caso de leitura ou um trava de página exclusiva em caso de uma atualização. A manipulação dessas travas no nível de página pode se tornar um gargalo.  
+
+\end{compactitem}
+
+\subsubsection{Opções de organização para sistemas modernos de memória principal}
+Embora o acesso direto a registros por ponteiros seja comum entre os sistemas modernos de memória principal, eles diferem em como os registros são organizados na memória. Esse tópico resume três opções organizacionais comuns entre os banco de dados \textit{in-memory}. 
+
+\textbf{Particionamento.} Uma das maiores diferenças entre os sistemas de banco de dados \textit{in-memory} é se eles particionam fisicamente o bando de dados ou não. H-Store e VoltDB são exemplos de sistemas particionados, enquanto Hekaton, HANA, MemSQL e Oracle TimesTen são sistemas não particionados. 
+ 
+ 
+Uma partição é uma divisão de um banco de dados lógico ou seus elementos constituintes em partes independentes distintas. O particionamento de banco de dados normalmente é feito para fins de gerenciamento, desempenho ou disponibilidade, ou para balanceamento de carga. Uma aplicação popular de particionamento está em um sistema de gerenciamento de banco de dados distribuído. Cada partição pode ser distribuída em vários nós e os usuários no nó podem realizar transações locais na partição. \cite{Navathe} 
+    
+    
+A vantagem do particionamento é que simplifica muito os problemas de simultaneidade entre threads e transações. Por exemplo, sistemas particionados, como o H-Store, executam transações em série dentro de uma partição, evitando assim protocolos de controle de simultaneidade de transações para transações de partição única
+    
+A vantagem de uma abordagem não particionada é que qualquer thread pode acessar e atualizar qualquer registro na base de dados.Esses sistemas evitam, assim, problemas de balanceamento de carga que podem surgir devido a partições que contém os dados mais utilizadoos, o que geralmente requer reatribuição de carga de trabalho entre os threads e possivelmente a movimentação de dados.
+    
+    
+\textbf{Multiversão.} Uma segunda opção arquitetural importante é se os sistemas suportam multiversão de dados. Multiversão, trata-se de um controle de concorrência que utiliza a data e a hora para registrar uma cópia temporária do banco de dados no instante em que um processo é executado.  Qualquer alteração que esteja sendo feita em determinado momento por um processo, não será vista pelos demais processos operando no banco de dados, até que as alterações tenham sido confimadas. Quando um banco de dados com controle de concorrência multiversão precisar atualizar um determinado dado, ele não irá sobrescrever este dado com o novo dado, mas sim, marcar o dado antigo como obsoleto e adicionar a versão mais recente em outro lugar. Desta forma, existem várias versões armazenadas, mas apenas uma é a última. Isso permite que os processos leitores do banco dados acessem os dados que estavam lá quando eles começaram a ler, mesmo que este dado tenha sido modificado ou excluído por outro processo. \cite{Bernstein}
+
+O \ac{MVCC} permite que os leitores nunca bloquiem os escritores e esse comportamento sem bloqueio leva a uma menor sobrecarga em comparação com os protocolos baseados em bloqueio, consequentemente uma melhora de desempenho. 
+
+
+\subsection{Indexação}
+
+
+
+%Por exemplo, os exemplos a seguir fornecem uma ideia de como esses sistemas são diferentes.
+
+%\begin{compactitem}
+    
+%    \item \textbf{Organização e indexação de dados.} Uma tendência generalizada em todos os sistemas é evitar o armazenamento baseado em páginas através de um buffer pool e armazenar apenas registros na memória. Os índices geralmente armazenam apontadores diretos nos registros. Vários sistemas também implementam novos métodos de indexação que otimizam a eficiência do cache da CPU.
+    
+%    \item \textbf{Controle de concorrência.} A maioria dos sistemas evita o controle de simultaneidade baseado em bloqueio pessimista devido ao bloqueio e alternância de contexto. Em vez disso, alguns sistemas usam uma variante de controle de simultaneidade de várias versões, enquanto outros usam a distribuição seriada particionada para obter alto desempenho.
+    
+%    \item \textbf{Durabilidade e recuperação.} log e recuperação raramente são usados. Em vez disso, a maioria dos sistemas optam por uma forma de criação de log através de comando juntamente a instantâneos periódicos do banco de dados para se recuperar de uma falha ou reinicialização (Melhorar Traduçao).
+
+%\item \textbf{Processamento e compilação de consultas.} Para evitar a sobrecarga de chamadas de função virtual, degradação da previsão de ramificação e interpretação de bytes, vários sistemas abandonam o modelo de processamento do iterador "get next". Em vez disso, as consultas são compiladas em código de máquina altamente otimizado e executadas diretamente em registros na memória 
+%\end{compactitem}
+
+
+
+
+
+CONTINUAR DAQUI
+
+
+
+
+
+
+
+
+
+
+
+%\section{Sistema de gerenciamento de banco de dados (SGBD)}
+%Um sistema de gerenciamento de banco de dados (SGBD) é uma coleção de programas que permite aos usuários criar e manter um banco de dados. O SGBD é, portanto, um sistema de software de propósito geral que facilita os processos de definição, construção, manipulação e compartilhamento de bancos de dados entre vários usuários e aplicações.\cite{navathesistemas}
+
+
+\section{ERP (Enterprise Resource Planning)}
+Um software ERP é um sistema de informática responsável por cuidar de todas as operações diárias de uma empresa, desde o Faturamento até o balanço contábil, de Compras a fluxo de caixa, de apuração de impostos a Administração de Pessoal, de inventário de estoque às contas a receber, do ponto dos funcionários a controle do maquinário da fábrica, portanto, todo o trabalho administrativo e operacional feito numa empresa. \cite{portalerp}
+
+%\section{SAP}
+%Empresa alemã fundada em 1972 na cidade de Walldorf, é lider de mercado no setor de desenvolvimento de softwares para gestão empresarial. A sigla SAP significa Análise de sistemas, aplicações e desenvolvimento de programas (Systemanalyse, Anwendungen und Programmentwicklung)
+
+\section{SAP ECC}
+SAP ERP Central Component (SAP ECC) é um sistema integrado de gestão empresarial (ERP). O principal produto da SAP foi projetado para ser executado em um banco de dados de terceiros, como o Oracle ou MySql.
+
+O sistema procura contemplar a empresa como um todo, dividindo em módulos, onde cada módulo corresponde a uma área especifica, como por exemplo, o módulo SD (Sales and Distribution) que contempla a área de Vendas e Distribuição. Quando informações são alteradas em módulo do SAP um acionador atualizará as informações em outras áreas relevantes da empresa, como por exemplo o estoque. \cite{ecc}
+
+
+
+\section{SAP HANA}
+
+O SAP HANA é uma plataforma completa de desenvolvimento de bancos de dados e aplicativos. Ele combina um banco de dados compatível com ACID com análises de alta velocidade, serviços de aplicativos e ferramentas flexíveis de aquisição de dados. \cite{hana}
+
+HANA significa High Performance Analytical Appliance (ferramenta analítica de alto desempenho) foi desenvolvido para aplicativos analíticos que podem ser implementados em alta velocidade. Utilizando a tecnologia in-memory o bando de dados SAP HANA se torna muito interesante para alplicações de Big Data. \cite{pelissari}
+
+\section{SAP S/4 Hana}
+
+SAP S/4 Hana é a abreviatura de SAP Business Suite 4 SAP HANA. O nome indica que esta é a quarta versão do SAP Business Suite, no entanto ela foi desenhada para ser executada unicamente no bando de dados SAP HANA. Para a sua elaboração, foi preciso repensar o conceito de base de dados e reescrever 400 milhões de linhas de códigos. Estas mudanças fazem que o sistema ERP seja mais fácil de compreender e utilizar. Além disso, é uma plataforma mais ágil para os próprios desenvolvedores. \cite{cienci}
+
+
+\section{Trabalhos Relacionados}
+
+\citeonline{kandekar} identificaram uma grande necessidade de avaliar o desempenho de um Sistemas de Gerenciamento de Banco de Dados locais para aplicativos móveis. Tendo em vista que as aplicações \textit{mobile} estão amplamente difundidas atualmente. 
+Devido a concorrência de grandes empresas o mercado de \textit{smartphones} está em constante crescimento e os preços cada vez mais acessíveis, Torna-se desafiador para os desenvolvedores de aplicativos competirem uns com os outros, pois, os usuários estão cada vez mais exigentes e não dispostos a esperar muito tempo para obter uma responta do aplicativo. 
+
+Portanto o objeto do tralho foi medir e avaliar o desempenho de uma das tecnologias de SGBD aplamente utilizadas, como SQL e Oracle. Os SGBDs podem ser avaliados de diversas formas como o tempo necessário para a execução de consultas, requisitos de espaço de memória, segurança, portabilidade e comportamenho de falha. Mas, para de análise de desempenho, os autores concentratam em no tempo de execução da consulta. 
+
+Os autores avaliaram o sistema de gerenciamento de banco de dados SQLite. O desempenho foi analisado em relação aos dados de "Texto". O cenário de testes criado pelos autores consiste em manter 50 registros no banco de dados e, para cada teste, foi aumentado os registros em 50 ou seja, 50, 100, 150 e assim sucessivamente até o banco de dados possuir 500 registros. A base de dados utilizada consiste em frases ou dados de texto armazenados para um aplicativo de tradução de idiomas. 
+
+Através dos dados coletados pelos autores podemos concluir que o comando \textit{Insert} demanda maior tempo de execução, se comparado com os outros comandos. Por outro lado o comando \textit{Delete} foi executado mais rápido quando a quantidade de dados é pequena. A partir de 150 registros o select se torna o comando mais eficiente em relação ao tempo de execução. 
+
+
+Segundo \citeonline{roopak} a necessidade de atender aos requisitos das aplicações modernas orientadas a objetos levou ao desenvolvimento de uma Sistema de banco de dados também orientado a objetos. Esse sistema de banco de dados está sendo utilizadado para aplicações avançadas no campo de projetos de engenharia de software, sistemas de design, Sistemas de manufatura e sistemas multimedia. O OODB tenta principalmente satisfazer a necessidade de realizar manipulações complexas de dados onde objetos e classes formam a base de dados. 
+
+Os autores utilizaram a base de dados do Huge Airport para realizar as experimentações e comparar os resultados. A tabela de vôos consiste em 10 anos de informações contendo 1 milhão de registros. No banco de dados Orientado a objetos existe a classe \textit{Fligths} que possui 29 atributos do tipo string. E, para realizar a análise foi criado a tabela Flights no bando de dados relacional que possui os mesmo 29 campos sem chave primária, portanto, dados redundantes podem ser inseridos. 
+
+Os testes consistiram em realizar operações de \textit{Insert}, \textit{Select} e \textit{Delete}. No primeiro teste foi realizado a inserção de 1000, 20000, 40000 e 80000 linhas tanto no banco de dados relacional quanto no banco de dados Orientado a objetos e analisando os resultados obtidos percebemos que o banco de dados orientado a objetos foi mais eficiente e mais rápido em comparação com o banco de dados realacional. 
+
+O segundo teste realizado foi sobre a operação de \textit{Select}, foi utilizando uma condição de tempo de serviço para que fosse possível selecionar 1000, 20000, 40000 e 80000 registros por vez. E através dos graficos de tempo ficou evidente que para a operação de select o banco de dados orientado a objetos é mesnos eficiente em relação a performance em comparação ao banco de dados relacional. 
+
+Seguindo a mesma lógica foi realizado o teste de \textit{Delete}. Onde, utilizando um parâmetro específico de tempo foi possível deletar 1000, 20000, 40000 e 80000 por vez. Porém no banco de dados orientado a objetos temos uma restrição no qual só é possível deletar um registro que satisfaz a condição por vez. Isso significa que somente a primeira ocorrência do registro que satisfaz a condição será excluída. Para contornar essa situação os autores decidiram criar um loop para executar o comando \textit{Delete}. 
+
+Através dos dados coletados pode-se observar que o bando de dados orientado a objetos também é menos eficiente na execução do comando \textit{Delete}. 
+
+O artigo fornece informações e apresenta razões pelas quais a programação orientada a objetos é essencial e como ele para ser utilizada também em banco de dados, além de mostrar que o bando de dados orientado a objetos foi mais eficiente em operações como \textit{Select}. 
+
+
+\citeonline{tongkaw} realizaram um comparação de performance entre os sistemas de gerenciamento de banco de dados MySQL e MariaDB utilizando carga de trabalho OLPT (\textit{Online Transaction Processing} ou Processamento de Transações em Tempo Real).
+
+A pesquisa utilizou os softwares de \textit{benchmark} Sysbench e OLTP-Bench e os testes foram todos realizados utilizando o mesmo computador. Os autores criaram um cenário de testes composto de 8 tabelas, 170 colunas, 9 chaves primárias, 5 Indexes, 12 chaves estrangeiras e 6 \textit{Joins}. As tabelas são: FLIGHT,
+AIRLINE, FREQUENTFLYER, AIRPORT, COUNTRY, RESERVATION, CUSTOMER e AIRPORTDISTANCE.
+
+Diferentemente dos outros artigos citados nessa Seção que mediam o tempo de uma transação como o \textit{Select} para comparar os banco de dados, os autores optaram por utilizar os programas de \textit{benchmark} para verificar quantas transações por segundo cada SGBD é capaz realizar. Através do resultados dos testes é possível verificar o que tanto no teste de transações por segundo quanto no teste de consumo de recurso do computador o MySQL possui um desempenho superior ao MariaDB. 
+
+
+%\citeonline{kramer}
+
+
+
+
+
+
+
+
+
+
+
+%\citeonline{rosario} realizou uma investigação para entender %que estudos têm sido realizados na área da Baropodometria, e %como os equipamentos de Baropodometria tem sido utilizados, bem %como discutir problemas científicos e soluções relacionadas à %estes estudos.
+
+%Esse autor concluiu que ainda existem poucos artigos %científicos que abrangem equipamentos de baropodometria, sendo %que este assunto tem um potencial de proporcionar uma excelente %pesquina na área da postura e afins. Ainda é citado no artigo %que a Baropodometria requer uma padronização a fim de melhorar %a qualidade técnica e apresentar provas da sua utilidade %clínica e científica. 
+    %ROSÁRIO, José Luís Pimentel. A review of the utilization of baropodometry in postural assessment. 2013. 5 f. Tese (Doutorado) - Curso de Medicina, State University Of Center-west - Unicentro, Guarapuava, 2013.
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+%  As figuras devem ser apresentadas pelos comandos abaixo. O parâmetro \textit{width} determina o tamanho que a figura
+%  será exibida. No parâmetro \textit{caption} o texto que aparece entre colchetes será o exibido no índice de figuras e o texto
+ % contido entre chaves será exibido na legenda da figura. Para citar a figura o comando ref deve ser usado juntamente
+  %com o label, como é mostrado nesse exemplo da Figura \ref{fig:ComponentesWiNoC}.
+
+%  \begin{figure}[H]
+%  % Alterar espaçamentos antes e depois do caption
+%  \setlength{\abovecaptionskip}{0pt}
+%  \setlength{\belowcaptionskip}{0pt}
+%  % Caption
+%  \caption[Principais componentes de WiNoCs]{Principais componentes de WiNoCs}
+%  \centering
+%  \includegraphics[width=.85\textwidth]{imagem/winoc.jpg}
+%  % Caption centralizada
+%  \captionsetup{justification=centering}
+%  \captionfont{\small{\textbf{\\Fonte: \cite{OliveiraIadis:2011}}}}	
+%  \label{fig:ComponentesWiNoC}
+%  \end{figure}
+
+
+ % Os comandos abaixo são usados para apresentação de gráficos. A diferença está apenas na definição do tipo ``grafico`` 
+  %que permite a adição dos itens no índice de gráficos de forma automática. Os parâmetros são semelhantes aos usados para
+%  representação de figuras. O parâmetro \textit{width} determina o tamanho do gráfico. O texto entre colchetes 
+%  no \textit{caption} será o exibido no índice de gráficos e o texto contido entre chaves será exibido na legenda.
+
+%\begin{grafico}[H]
+%  % Alterar espaçamentos antes e depois do caption
+%  \setlength{\abovecaptionskip}{5pt}
+%  \setlength{\belowcaptionskip}{0pt}
+%  % Caption
+%  \caption[Percentual de pacotes enviados]%
+%	  {Percentual de pacotes enviados}
+ % \centering
+  %\includegraphics[width=.48\textwidth]{imagem/graficos/grafico_pacotes_enviados_bt.png}
+  % Caption centralizada
+%  \captionsetup[grafico]{justification=centering}
+%  % Fonte
+ % \captionfont{\small{\textbf{\\Fonte: Dados da pesquisa}}}
+ % \end{grafico}
+
+%  O Gráfico \ref{graf:quad} mostra os gráficos dispostos lado a lado. Neste caso, componentes \textit{subfloat}
+%  são utilizados para definir a apresentação em quatro quadrantes. Neste caso, os gráficos podem ser referenciados por conjunto,
+  %como Gráfico \ref{graf:quad}, ou por um quadrante específico, como Gráfico \ref%{graf:injecao_bt}. 
+
+%\begin{grafico}[H]
+  % Alterar espaçamentos antes e depois do caption
+%  \setlength{\abovecaptionskip}{5pt}
+%  \setlength{\belowcaptionskip}{0pt}
+  % Caption
+%  \caption[Resultados da carga de trabalho 1]
+%	  {Resultados da carga de trabalho 1}
+%  \centering
+%  \subfloat[Enviados]
+%      {\label{graf:enviados_bt}\includegraphics[width=.48\textwidth]%{imagem/graficos/grafico_pacotes_enviados_bt.png}} \quad
+%  \subfloat[Perdidos]
+%      {\label{graf:perdidos_bt}\includegraphics[width=.48\textwidth]%{imagem/graficos/grafico_pacotes_perdidos_bt.png}} \quad
+%  \subfloat[Taxa de injeção]
+%      {\label{graf:injecao_bt}\includegraphics[width=.48\textwidth]%{imagem/graficos/grafico_taxa_injecao_bt.png}} \quad
+%  \subfloat[Vazão]
+%      {\label{graf:vazao_bt}\includegraphics[width=.48\textwidth]%{imagem/graficos/grafico_vazao_bt.png}}
+%  % Caption centralizada
+%  \captionsetup[grafico]{justification=centering}
+%  % Fonte
+%  \captionfont{\small{\textbf{\\Fonte: Dados da pesquisa}}}
+%  \label{graf:quad}
+ % \end{grafico}
+
+%Um exemplo de criação de tabela é mostrado abaixo. As colunas são separadas por elementos \& e as linhas por duas barras invertidas. 
+%  Os comandos \textit{hline} e | definem a criação de linhas e colunas para separar os conteúdos, respectivamente. A tabela pode
+%  ser referenciada usando o comando ref juntamente com o label, como na Tabela %\ref{tab:classesNas}. 
+
+ %  % Tabela
+ % \begin{table}[H]
+ %   \centering
+ %   \footnotesize
+ %   % Alterar espaçamentos antes e depois do caption
+%    \setlength{\abovecaptionskip}{0pt}
+%    \setlength{\belowcaptionskip}{0pt}
+    % Caption
+%    \caption[Parâmetros definidos por classe]{Parâmetros definidos por classe}
+%    \label{tab:classesNas}
+%    % Conteúdo da tabela
+%    \begin{tabular}{c|c|c|c|c|c|c|c}
+%	\hline \hline
+%	\textit{Benchmark} &	Parâmetro &	Classe S &	Classe W &	Classe A &	%Classe B &	Classe C &	Classe D \\ 
+%	\hline \hline
+% 	BT & \textit{Grid}	& $12^3$	& $24^3$ 	& $64^3$	& $102^3$ 	& $162^3$	& $408^3$ \\ 
+%	CG & Linhas		& 1400		& 7000 		& 14000 	& 75000 	& 150000 	& 1500000 \\ 
+%	EP & Pares 		& $2^{24}$	& $2^{25}$	& $2^{28}$	& $2^{30}$	& $2^{32}$	& $2^{36}$ \\
+%	FT & \textit{Grid}	& $64^3$	& $128^2*32$	& $256^2*128$	& $512*256^2$	& $512^3$	& $2048*1024^2$ \\ 
+%	IS & Chaves		& $2^{16}$	& $2^{20}$	& $2^{23}$	& $2^{25}$	& $2^{27}$	& $2^{31}$ \\ 
+%	LU & \textit{Grid}	& $12^3$	& $33^3$	& $64^3$	& $102^3$	& $162^3$	& $408^3$ \\
+%	MG & \textit{Grid}	& $32^3$	& $128^3$	& $256^3$	& $256^3$	& $512^3$	& $1024^3$ \\ 
+%	SP & \textit{Grid}	& $12^3$	& $36^3$	& $64^3$	& $102^3$	& $162^3%$	& $408^3$ \\
+%	\hline \hline
+%    \end{tabular}
+%    % Fonte
+%    \captionfont{\small{\textbf{\\Fonte: Adaptado de \cite{Nas:2011}}}}
+%  \end{table}

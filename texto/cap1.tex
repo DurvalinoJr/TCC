@@ -1,0 +1,154 @@
+% Nome do capítulo
+\chapter{Introdução}
+% Label para referenciar
+\label{cap1}
+
+% Diminuir espaçamento entre título e texto
+\vspace{-1.9cm}
+
+% Texto do capítulo
+Atualmente, as empresas estão cada vez mais dependentes de tecnologias informatizadas que são responsáveis pela coleta, processamento, armazenagem, análise e distribuição de informações e dados importantes em um determinado contexto dentro do ramo de negócio. Em geral, as grandes companhias estão buscando adotar modelos de gerência para aperfeiçoar a utilização dos recursos da informação para alinha-los ao foco do negócio. \cite{WEILL}
+
+A quantidade de informação que está disponível para a humanidade é enorme e à medida que o conhecimento humano se expande, maior é a quantidade dessa informação que precisa ser armazenada e analisada. Além da quantidade, o fluxo e a variedade dessas informações constantemente desafiam a indústria pois a quantidade de dados manipulados aumenta exponencialmente. Assim, um sistema de banco de dados eficiente se torna indispensável para qualquer tipo de negócio, pode-se classificar como sistema de banco de dados qualquer sistema, baseado em computador, que reúna, organize e mantenha informações e registros ordenados sobre um determinado assunto que seja considerado significativo à organização servida por esse sistema. \cite{datebd}
+
+
+%pode-se classificar como banco de dados qualquer sistema que reúna e organize informações e registros ordenados sobre determinado assunto. Uma lista telefônica, o catálogo de livros de uma biblioteca, ou qualquer base de dados onde seja possível localizar ou gerenciar informações armazenadas são exemplos de bancos de dados.
+
+%Basicamente nada mais é do que um sistema de armazenamento de dados baseado em computador; isto é, um sistema cujo objetivo global é registrar e manter informação. Esta informação pode ser qualquer uma considerada significativa à organização servida pelo sistema.%
+
+Os bancos de dados e sua tecnologia tem um impacto importante sobre o uso crescente dos computadores. É correto afirmar que os bancos de dados desempenham um papel crítico em quase todas as áreas em que os computadores são usados, por exemplo: negócios, comércio eletrônico, engenharia, medicina, genética, direito, educação e biblioteconomia. \cite{navathesistemas}
+
+No contexto corporativo, são os bancos de dados que fornecem armazenamento e gerenciamento de forma efetiva dos dados de clientes, fornecedores, produtos, pequisas, currículos, portifólios e etc. Exatamente por conta disso, a área de banco de dados, incentivada pela demanda do mercado, está em constante desenvolvimento e crescimento no mercado de \ac{TI}.
+
+As grandes corporações e empresas sabem da importancia de possuir, interpretar e processar os dados de suas vendas, compras, finanças e por esse motivo já possuem algum sistema de gestão empresarial conhecidos como \ac{ERP}. Um sistema ERP busca a  integração  entre  as  diversas  áreas  operacionais
+e gerenciais de uma empresa. Este sistema atua como espinha dorsal que se estende aos sistemas dos clientes, fornecedores e parceiros comerciais, formando uma cadeia de valor integrada ao processo de negócio. Com todas essas informações para armazenar e processar os sistemas ERPs participaram diretamente do desenvolvimento e crescimento da área de banco de dados. 
+
+A maior parte das aplicações de banco de dados armazenam os dados nos discos rígidos, devido ao baixo custo por bit e sua natureza não volátil. Mas, a latência do acesso aos dados em disco é limitada por suas características mecânicas o que torna o acesso aos dados relativamente mais lento. 
+
+Com o desenvolvimento tecnológio os sistemas de banco de dados baseado em disco não conseguem acompanhar os requesitos de desenpenho das aplicações modernas. E, deste mesmo modo, as memórias RAM impulsionam a curva tecnológica aumentando sua capacidade e diminuindo o custo por bit a cada geração. \cite{ravinair}
+%(CITAR https://ieeexplore.ieee.org/document/7151782/references#references)
+
+Para suprir essa demanda surgiram os banco de dados baseados em memória principal, onde os dados são alocados na memória principal do computador e não mais em discos rígidos. Dessa forma, quando os dados precisam ser analidados, já estão disponíveis instantaneamente, acelerando a velocidade de processamento.
+
+
+%Um dos maiores sistemas ERP do mundo é o SAP \ac{ECC}. O SAP ECC, desenvolvido pela empresa alemã \textbf{SAP SE}, fornece módulos que abrangem uma ampla gama de processos dentro de uma empresa, incluindo finanças, logística, recursos humanos, planejamento de produtos e atendimento ao cliente, conectados em um único sistema personalizável executado em um banco de dados de escolha do usuário.  
+
+%Contudo, no cenário corporativo o SAP ECC vem sendo substituido pelo SAP S/4 HANA, um pacote ERP projetado especificamente para computação \textit{in-memory} onde os dados são alocados na memória central do computador e não mais em discos rígidos. Desta forma, quando os dados precisam ser analisados, já estão disponíveis instantaneamente, acelerando a velocidade de processamento.
+
+\section{Objetivos}
+\label{secao1}
+
+O objetivo deste trabalho é realizar uma pesquisa sobre os banco de dados baseados em disco e banco de dados baseados em memória principal. Realizar um estudo sobre banco de dados, compreender a estrutura de armazenamento dessas duas tecnologia, realizar comparações de desempenho de leitura e escrita, também serão realizados testes de inserção, seleção, atualização e remoção dos dados, portanto o trabalho tem como meta oferecer mais um mecanismo de comparações entres os dois modelos de \ac{BD}.  
+
+%O objetivo deste trabalho é realizar uma pesquisa sobre banco de dados relacionais utilizados no SAP ECC e bancos de dados \textit{in-memory} utilizados no sap S/4 HANA, realizar comparações de desempenho de leitura e escrita, também serão realizados testes de inserção, seleção, atualização e remoção dos dados, portanto o trabalho tem como meta oferecer mais um mecanismo de comparações entres os dois modelos de \ac{BD}.  
+
+%é apresentar uma comparação do desempenho dos bancos de dados utiliazados nos sistemas de gestão empresarial SAP ECC e SAP S/4 HANA, apresentando os principais conceitos e caracteristicas de cada banco de dados e realizar comparações quanto ao tempo de inserção, seleção, atualização e remoção de dados.%
+
+Dentre os objetivos específicos, tem-se:
+
+	\begin{compactitem}
+      \item[a)] Apresentar as principais diferenças entre os dois bancos de dados;
+      \item[b)] Apresentar um estudo de caso dos dois BDs
+      \item[c)] Criar e popular tabelas para realização dos testes;
+      \item[d)] Capturar o tempo de execução de cada uma das interação com os bancos de dados;
+      \item[e)] Analisar os resultados;
+    \end{compactitem}
+
+\section{Justificativa}
+\label{secao2}
+
+As grandes empresas de todo o mundo executam milhares de transações por dia, realizando compras e vendas, recenbendo novos produtos, vendendo outro produtos e serviços, realizando pagamentos, gerenciando contas de pessoas e etc. Como todas essas informações já estão automatizadas e armazenadas em bancos de dados, é muito importante saber qual irá gerar uma maior economia de tempo, diminiução dos custos e maior produtividade, gerando assim mais lucro. 
+
+Além disso, compreender o funcionamento de cada banco de dados pode auxiliar também os desenvolvedores, por terem um maior embasamento teórico no momento de escolher o \ac{SGBD} que irão utilizar no desenvolvimento de suas aplicações. 
+
+
+
+\section{Organização do trabalho}
+% - Apresentar os banco de dados - Falar sobre tecnologias opensource
+
+O trabalho consistem em realizar um estudo sobre banco de dados comparando as abordagens utilizadas nos banco de dados baseados em disco e nos banco de dados baseados em memória principal. Para isso buscou-se uma revisão bibliográfica para entendiento dos principais conceitos que precisan ser entendidos para as análises dos resultados. 
+
+O banco de dados baseado com o armazenamento em disco utilizado neste trabalho foi o PostgreSQL, um poderoso sistema de banco de dados relacional de código-fonte aberto que utiliza a linhaguem SQL. O PostgreSQL possui mais de 30 anos de desenvolvimento ativo e por isso é bastante confiável para este estudo. 
+
+Por sua vez, o Redis foi o banco de dados com armazenamento de dados baseado em memória principal utilizado neste estudo. O Redis também foi escolhido por ser \textit{open source}.
+
+A metodologia de pesquisa trata-se de uma forma descritiva de busca de dados e indicações para análise. Os resultados são avaliados de maneira a conferir os dados encontrados com análises dos dados coletados durante o desenvolvimento do trabalho. 
+
+%O trabalho consiste em realizar um estudo sobre o banco de dados utilizado no SAP ECC e o banco de dados utilizado no SAP S/4 HANA e comparar o desempenho de dois bancos de dados. Para isso buscou-se uma revisão bibliográfica para entendimento dos principais conceitos que precisam ser entendidos para as análises de resultados. A metodologia de pesquisa trata-se de uma forma descritiva de busca de dados e indicações para análise. Os resultados são avaliados de maneira a conferir os dados encontrados com análises dos dados coletados durante o desenvolvimento do trabalho. 
+
+\subsection{Fundamentação teórica}
+
+A fundamentação teórica basicamente se divide em três partes. A primeira analisa de maneira clara e objetiva os conceitos relacionados a banco de dados que são premissas para o entendimento deste trabalho. 
+
+A segunda parte aborda abora da história dos dois banco de dados escolhidos para realização deste trabalho (\textit{PostgreSQL e Redis}), a fim de contexualizar sobre a finalidade de uso desses banco de dados. 
+
+A terceira parte faz referência aos estudos já realizados nessa área da tecnologia, afim de entender a metodologia utilizada por outros autores com o objetivo de embasar a metodologia científica empregada nesse estudo. 
+
+\subsection{Metodologia}
+O  capitulo  de  metodologia  se  concentra  em  esclarecer  as  técnicas  de  pesquisa adotadas  para  obtenção  dos  resultados.  São expostos nessa parte do trabalho como foi feito a população das tabelas, coleta dos dados e análise dos resultados. Assim o capítulo se divide em: 
+
+\begin{compactitem}
+	\item Criar as tabelas.
+    \item Popular as tabelas.
+    \item Coleta dos dados.
+    \item Análise e conferência dos dados coletados.
+\end{compactitem}
+
+\subsection{Testes e Resultados}
+Esse capítulo trata de expor os resultados encontrados com a pesquisa descrita na metodologia. Dividindo-se em duas partes: análise dos tempos de execução coletados em cada um dos bancos de dados separadamente e comparação dos dados coletados de um banco de dados com o outro.
+
+Na primeira parte serão expostos em tabelas o tempo que cada sentença SQL demorou para ser executado e realização de análise sobre estes dados. Já na segunda os dados de cada banco de dados serão confrontados para análise de desempenho.
+
+\subsection{Conclusão}
+A conclusão aponta as diferenças no desempenho dos banco de dados e também  Sugestões  para  outros trabalhos são propostas a partir da temática desenvolvida. 
+
+
+
+
+
+%Atualmente, há uma grande busca por desenvolver aplicações e sistemas que tornem a vida do usuário cada vez mais simples, tomando sempre menos tempo do dia do cliente, usuário ou paciente, melhorarando assim a qualidade de vida. 
+
+%Além disso, é possível pensar em diversas razões para desenvolver um projeto deste tipo, pois criando aplicações inteligentes que sejam capazes de realizar diagnósticos precisos é possível melhorar as condições de trabalho para os médicos ou fisioterapeutas, que terão maior confiança em indicar um tratamento para seus pacientes. 
+
+%Quando se fala em medicina e fisioterapia sempre se tem em mente equipamentos modernos e caros, o que dificulta o acesso de pessoas de baixa renda a estes exames. Portanto, há uma grande necessidade em aumentar o número de \textit{softwares} e aplicações que sejam simples e eficazes no diagnóstico do paciente. Possibilitando, assim, o acesso de um maior número de pessoas a estes exames.
+
+
+%A seguir serão apresentados alguns comandos do LaTex usados comumente para formatar textos de dissertação baseados
+%  na normalização da PUC (2011).
+
+%   Para as citações a norma estabelece duas formas de apresentação. A primeira delas é empregada quando a
+%   citação aparece no final de um parágrafo. Neste caso, o comando cite é usado para formatar a citação em caixa alta,
+%  como é mostrado no exemplo a seguir. \cite{Duato:2002}.
+
+%   Outra forma de apresentação da citação é a que ocorre no decorrer do texto, essa situação é exemplificada na próxima frase.
+%   Conforme \citeonline{Bjerregaard:2006}, o estudo mencionado revela progressos no desempenho dos processadores. 
+%   Para a formatação da citação em caixa baixa deve ser usado o comando citeonline.
+
+%   Nas citações que aparecem mais de uma referência as mesmas devem ser separadas por vírgulas, como
+%   neste exemplo. \cite{Keyes:2008, Zhao:2008, Ganguly:2011}. Se houver necessidade de especificar a página ou que foi
+%   realizada uma tradução do texto deve ser feito da seguinte maneira. \cite[p.~2, tradução nossa]{Sasaki:2009}.
+ %  A citação direta deve ser feita de forma semelhante. ``[...] A carga de trabalho de um sistema pode 
+%   ser definida como o conjunto de todas as informações de entrada.''~\cite[p. 160]{Menasce:2002}.
+
+%   O arquivo dissertacao.bib mostra exemplos de representação para vários tipos de referências (artigos de conferências, 
+%   periódicos, relatórios, livros, dentre outros). Cada um desses tipos requer uma forma diferente de representação para 
+%   que a referência seja formatada conforme as exigências da normalização.
+
+
+% \subsection{Primeira subseção}
+  
+%   As enumerações devem ser geradas usando o pacote \textit{compactitem}. Cada item deve terminar com um ponto final.
+ %  Abaixo um exemplo de enumeração é apresentado:
+% 
+   %  \begin{compactitem}
+%       \item[a)] Coletar e analisar.
+%       \item[b)] Configurar e simular.
+%       \item[c)] Definir a metodologia.
+%       \item[d)] Avaliar o desempenho.
+%       \item[e)] Analisar e avaliar características.
+%     \end{compactitem}
+%
+%\section{Segunda seção}
+
+%  Para referenciar um capítulo, seção ou subseção basta definir um label para o mesmo e usar o comando ref para referênciá-lo
+%  no texto. Exemplo: Como pode ser visto no Capítulo \ref{cap1} ou na Seção \ref%{secao1}.
